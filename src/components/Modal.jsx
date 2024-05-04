@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ReactComponent as Close } from "../assets/close.svg";
+import Close from "../assets/close.svg";
+import Button from '../components/ButtonBase';
 
 function Modal({ isOpen, setIsOpen, modalConfig }) {
   return (
@@ -43,26 +44,24 @@ function Modal({ isOpen, setIsOpen, modalConfig }) {
                         {modalConfig.icon ? modalConfig.icon : null}
                         {modalConfig.title ? modalConfig.title : null}
                       </Dialog.Title>
-                      <button className="h-fit py-1 px-1 text-center rounded-lg font-bold text-neutral-100 hover:bg-neutral-30"
+                      <Button
+                        variant='text'
+                        startIcon={Close}
+                        className='hover:bg-neutral-30 px-1'
                         onClick={() => {
-                          setIsOpen(false);
-                        }}
-                      >
-                        <Close className="hover:bg-neutral-30 px-1" />
-                      </button>
+                            setIsOpen(false);
+                          }
+                        }
+                      />
                     </div>
                     <div className="relative py-1 px-6 flex-auto">{modalConfig.content ? modalConfig.content : null}</div>
 
                     <div className="flex items-center justify-end p-6 rounded-b gap-3">
-                      <button
-                        type="button"
-                        className="h-fit py-1 px-4 text-center rounded-lg font-bold bg-white border-2  border-neutral-40 shadow-sm text-neutral-100 hover:bg-neutral-30 undefined"
-                        onClick={() => {
+                      <Button variant='neutral' type='button' onClick={() => {
                           setIsOpen(false);
-                        }}
-                      >
-                        <p>Cancel</p>
-                      </button>
+                        }}>
+                        Cancel
+                      </Button>
                       {modalConfig.actionButton ? modalConfig.actionButton : null}
                     </div>
                   </div>
