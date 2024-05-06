@@ -14,7 +14,7 @@ export default function Dropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="h-fit py-1 px-4 rounded-lg hover:bg-neutral-30 text-neutral-100">
+        <Menu.Button className="h-fit py-1 px-4 rounded-lg hover:bg-neutral-30 text-neutral-100 z-0">
           <More />
         </Menu.Button>
       </div>
@@ -27,7 +27,7 @@ export default function Dropdown() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-1 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="z-10 absolute right-0 mt-1 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1">
             <Menu.Item>
               {({ active }) => (

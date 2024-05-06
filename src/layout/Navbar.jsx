@@ -6,8 +6,8 @@ import PlusIcon from '../assets/plus.svg'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState({
-    taskName: "",
-    progress: "",
+    groupName: "",
+    desc: "",
   });
 
   const onOpenModal = () => {
@@ -28,8 +28,8 @@ const Navbar = () => {
             type="text"
             placeholder="Title"
             className="w-full py-2 px-4 rounded-lg bg-white border-2 border-neutral-40 focus:outline-none focus:border-primary focus:caret-primary"
-            onChange={(e) => handleInput(e, "title")}
-            value={input.title}
+            onChange={(e) => handleInput(e, "groupName")}
+            value={input.groupName}
           />
         </div>
         <div className="mt-5">
@@ -39,8 +39,8 @@ const Navbar = () => {
             type="text"
             placeholder="Description"
             className="w-full py-2 px-4 rounded-lg bg-white border-2 border-neutral-40 focus:outline-none focus:border-primary focus:caret-primary"
-            onChange={(e) => handleInput(e, "description")}
-            value={input.description}
+            onChange={(e) => handleInput(e, "desc")}
+            value={input.desc}
           />
         </div>
       </>
